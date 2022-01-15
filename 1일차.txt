@@ -1,0 +1,63 @@
+
+백틱사용
+console.log(``);
+1. 백틱 안에서는 엔터도 인식한다.
+2. 따옴표, 쌍따옴표, 백 슬래쉬, 백틱 출력은 앞에 \를 붙여야한다.
+
+
+---------------------------------------------
+값 입력받기.
+
+자바스크립트에서는 모듈을 포함시켜야 한다.
+fs모듈, readline모듈 사용 가능.
+
+fs모듈 사용했을 시
+const fs = require('fs');
+const inputData = fs.readFileSync('/dev/stdin')
+	.toString().split(' ').map(value => +value)
+
+-참고
+const fs = require('fs');
+const inputData = fs.readFileSync('dev/stdin').toString().split(' ').map(value=>+value);
+
+const [a, b] = inputData;
+(쉬운 버젼
+	const A = parseInt(inputData[0]);
+	const B = parseInt(inputData[1]);
+)
+console.log(a+b);
+
+map(value=>+value) 메서드
+ 는 inputData에 입력 된 값들을 하나씩
+모아 새로운 배열을 만들어 준다.
+
+
+---------------------------------------------
+
+나눗셈 결과에서 소수점을 없애주는 방법
+Math.floor 사용!
+
+10의 자리 숫자 : Math.floor((a%100)/10)
+100의 자리 숫자 : Math.floor(a/100)
+
+
+
+
+---------------------------------------------
+
+
+
+
+
+---------------------------------------------
+
+
+
+
+
+---------------------------------------------
+
+
+
+
+---------------------------------------------

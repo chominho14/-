@@ -1,0 +1,66 @@
+set함수.
+자료형에 관계 없이 원시 값과 객체 참조 모두 유일한 값을
+저장할 수 있다.
+
+const set = new Set([]);
+
+set.has(객체); --> 객체 값을 가지고 있는 지 확인
+
+
+
+
+------------------------------------------
+
+for...of 명령문 : 반복가능한 객체(Array,Map,Set
+	,String, arguments 객체 등)에 대해서 
+	반복하고 각 개별 속성값에 대해 실행되는 문이
+	있는 사용자 정의 본복 후크를 호출하는 루프를 생성.
+
+구문
+for (variable of iterable) {
+  statement
+}
+
+사용
+const arr1 = ['a','b','c'];
+
+for(const element of arr1){
+	console.log(element);
+}
+"a"
+"b"
+"c"
+
+
+사용2
+let iterable = new Map([["a", 1], ["b", 2], ["c", 3]]);
+
+for (let [key, value] of iterable) {
+  console.log(value);
+}
+1
+2
+3
+
+----------------------------------------
+
+set 반복
+
+let iterable = new Set([1, 1, 2, 2, 3, 3]);
+
+for (let value of iterable) {
+  console.log(value);
+}
+1
+2
+3
+
+
+
+-----------------------------------------
+
+
+
+
+
+

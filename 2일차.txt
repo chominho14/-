@@ -1,0 +1,84 @@
+fs모듈이 오류가 났을 때를 대비해서 
+readline 모듈을 외우자
+
+fs모듈 사용법
+
+const fs = require('fs');
+const inputData = fs.readFileSync('dev/stdin')
+	.toString().split('\n').map(value=>+value);
+
+
+readline모듈 사용법
+
+const readline = require('readline');
+const rl = readline.createInterface({
+	input : process.stdin,
+	output : process.stdout
+})
+
+let input = []
+rl.on('line'. function( line ) {
+	input.push(parseInt(line));
+}).on('close', function() {
+	const X = input[0];
+	const Y = input[1];
+
+	//logic!
+})
+
+
+---------------------------------------------
+if 알람 문제 풀이
+const fs = require('fs');
+const inputData = fs.readFileSync('dev/stdin').toString().split(' ').map(value=>+value);
+
+const [hour, minute] = inputData;
+let newminute;
+let newhour;
+
+if( minute < 45 ){
+    newminute = minute + 15; 
+    if(hour == 0){
+        newhour = 23;
+    } else {
+        newhour = hour - 1;
+    }
+} else if ( minute >= 45 ){
+    newhour = hour;
+    newminute = minute -45;
+}
+console.log(newhour + " " + newminute);
+
+좀 더 간단하게 짜보면
+
+const [hour, minute] = inputData;
+
+minute -= 45;
+if(minute<0){
+    minute += 60;
+    hour--;
+    if(hour<0){
+        hour = 23;
+    }
+}
+
+console.log(hour + " " + minute);
+
+오류가 나긴 함
+
+삼항 연산자를 사용해서 풀어보면
+let newminute;
+let newhour;
+
+if( minute < 45 ){
+    newminute = minute + 15; 
+    hour==0 ? newhour=23 : newhour=hour-1;
+} else if ( minute >= 45 ){
+    newhour = hour;
+    newminute = minute -45;
+}
+console.log(newhour + " " + newminute);
+
+
+
+

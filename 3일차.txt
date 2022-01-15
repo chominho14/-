@@ -1,0 +1,40 @@
+const readline = require('readline');
+const rl = readline.createInterface({
+    input : process.stdin,
+    output : process.stdout
+});
+const array = [];
+const onInput = (input)=> array.push(input);
+
+const onClose = ()=>{
+    //logic
+
+    process.exit();
+}
+rl.on('line',onInput).on('close',onClose);
+
+
+
+------------------------------------------
+
+별 반대로 찍기
+join메소드 이용하여 찍어보기
+
+let inputData = require('fs').readFileSync('dev/stdin').toString();
+let num = Number(inputData);
+
+let numArray = new Array(num).fill(' ');
+
+for(let i=num-1; i>=0; i--){
+    numArray[i] = "*";
+    console.log(numArray.join(''));
+}
+
+
+배열을 하나 만들어서 거기를 ' '로 가득 채운다.
+그 뒤 for문을 이용하여 "*"을 하나씩 넣어 준다.
+
+
+
+
+
