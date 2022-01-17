@@ -1,0 +1,44 @@
+
+
+문제 설명
+
+2016년 1월 1일은 금요일입니다. 2016년 a월 b일은 무슨 요일일까요? 
+두 수 a ,b를 입력받아 2016년 a월 b일이 무슨 요일인지 리턴하는 함수,
+ solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지 각각 
+SUN,MON,TUE,WED,THU,FRI,SAT 입니다. 예를 들어 a=5, b=24라면
+ 5월 24일은 화요일이므로 문자열 "TUE"를 반환하세요.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+입출력 예
+a	b	result
+5	24	"TUE"
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+풀이과정
+
+1. Date()를 이용하여 구한다.
+2. f12 개발자도구 콘솔에서 Date(`2016,${a},${b});를 이용하여 하나씩 풀어나간다.
+
+function solution(a, b) {
+    var answer = '';
+    const date = new Date(`2016,${a},${b}`);
+    let day= (date+"").split(' ');
+     answer = day[0].toUpperCase();
+    return answer;
+}
+
+다른풀이
+
+function getDayName(a,b){
+  var date = new Date(2016, (a - 1), b);
+    return date.toString().slice(0, 3).toUpperCase();
+}
+
+slice를 이용하여 0번째부터 3번째까지 잘라내는 것으로 
+day변수를 설정해서 split으로 자르는 과정을 줄일 수 있다.
+toString과정과 date=""과 같은 역할
