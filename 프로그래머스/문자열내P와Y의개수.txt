@@ -1,0 +1,48 @@
+
+
+문제 설명
+대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 'p'의 개수와
+ 'y'의 개수를 비교해 같으면 True, 다르면 False를 return 하는 
+solution를 완성하세요. 'p', 'y' 모두 하나도 없는 경우는 항상 True를
+ 리턴합니다. 단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.
+
+예를 들어 s가 "pPoooyY"면 true를 return하고 "Pyy"라면 false를 return합니다.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+입출력 예
+s		answer
+"pPoooyY"	true
+"Pyy"		false
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+풀이과정
+
+1. pCounter와 yCounter을 만들어 비교하여 리턴하는 방향으로 생각했다.
+2. s를 배열로 쪼개어 넣고 for문을 쪼갠 배열만큼 돌려서 if문을 두 번 돌려 y,Y이면 y카운터를 하나
+p,P이면 p카운터를 하나 늘린다.
+3. 마지막으로 비교해서 값이 같으면 true 아니면 false를 리턴한다.
+
+코드
+
+function solution(s){
+    let pCounter = 0;
+    let yCounter = 0;
+    
+    const sArr = s.split("");
+    for(let i=0; i<sArr.length; i++){
+        if(sArr[i] === "p" || sArr[i] === "P")
+            pCounter++;
+        if(sArr[i] === "y" || sArr[i] === "Y")
+            yCounter++;
+    }
+    if(pCounter === yCounter) {
+        return true
+    } else{
+        return false
+    }
+}
