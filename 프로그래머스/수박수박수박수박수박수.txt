@@ -1,0 +1,49 @@
+
+문제 설명
+길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수,
+ solution을 완성하세요. 예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를
+ 리턴하면 됩니다.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+입출력 예
+n	return
+3	"수박수"
+4	"수박수박"
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+풀이과정
+
+1. 몫과 2로나눈 나머지를 변수에 넣어둔다.
+2. 만약 나머지가 0이면 수박을 몫만큼 실행시킨 결과를 출력
+3. 만약 나머지가 1이면 수박을 몫만큼 실행시킨 결과 + 수 를 출력한다.
+
+
+코드
+
+function solution(n) {
+    const share = Math.floor(n/2);
+    const remainder = n%2;
+    let result = "";
+    if(remainder === 0){
+        for(let i=0; i<share; i++){
+            result += "수박"
+        }
+        return result;
+    } else {
+        for(let i=0; i<share; i++){
+            result += "수박"
+        }
+        return result+"수";
+    }
+}
+
+다른코드
+
+const waterMelon = n => "수박".repeat(n).slice(0,n);
+
+로 repeat과 slice 함수를 이용하면 간단하다.
