@@ -1,0 +1,30 @@
+
+문제 설명
+정수를 담고 있는 배열 arr의 평균값을 return하는 함수,
+ solution을 완성해보세요.
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+입출력 예
+arr		return
+[1,2,3,4]	2.5
+[5,5]		5
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+풀이과정
+1. reduce를 이용해 arr에 있는 수들을 전부 더해준다.
+2. arr의 길이로 나누어 준다.
+
+
+
+코드
+
+function solution(arr) {
+    let result = 0;
+    result = arr.reduce((a,b) => a+b)
+    return result/arr.length;
+}
