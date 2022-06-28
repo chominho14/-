@@ -16,7 +16,7 @@ for i in m_lst:
     while left <= right: # left가 right보다 커지면 탈출
         mid = (left + right) // 2 # left와 right의 중간 값
         if i == a_lst[mid]: # m_lst의 값과 탐색 값이 같을 때
-            result = True # while문 탈출
+            result = True # m_lst에 결과 값 존재
             print(1) # 1 출력
             break
         
