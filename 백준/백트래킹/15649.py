@@ -3,13 +3,13 @@ N, M = map(int, input().split())
 # 스택을 채울 리스트
 s = []
 
-def dfs(start):
+def dfs():
     # 값을 찾았으면 출력
     if len(s) == M:
         print(' '.join(map(str, s)))
         return
     
-    for i in range(start, N + 1):
+    for i in range(1, N + 1):
         # 값이 중복이라면 배제
         if i in s:
             continue
@@ -20,4 +20,4 @@ def dfs(start):
         # 이전 상황 돌아가기
         s.pop()
         
-dfs(1)
+dfs()
