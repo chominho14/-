@@ -1,5 +1,10 @@
 
-n=int(input())
+def solution(mylist):
+    answer = []
+    
+    for i in range(len(mylist)):
+        answer.append(len(mylist[i]))
+        
+    print(answer)
+    return answer
 
-for i in range(n):
-    print(i)
