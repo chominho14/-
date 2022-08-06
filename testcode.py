@@ -1,21 +1,21 @@
-T = int(input())
-s = []
+N = int(input())
 
-for _ in range(T):
-    s.append(input())
+cnt = 0
+
+for i in range(N):
+    word = input()
     
-for i in range(T):
-    cnt = 0
+    err = 0
+    for k in range(len(word)-1):
+        
+        if word[k] != word[k+1]:
+            new_word = word[k+1:]
+            
+            if new_word.count(word[k]) > 0:
+                err += 1
     
-    for j in range(len(s[i])):
-        if cnt >= 0:
-            if s[i][j] == "(":
-                cnt += 1
-            else:
-                cnt -= 1
-        else:
-            continue
-    if cnt == 0:
-        print("YES")
-    else:
-        print("NO")
+    if err == 0:
+        cnt += 1
+
+print(cnt)
+                
