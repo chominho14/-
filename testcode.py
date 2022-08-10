@@ -1,21 +1,17 @@
-N = int(input())
-
+s = "111333344"
+r = []
+new_r = []
 cnt = 0
-
-for i in range(N):
-    word = input()
-    
-    err = 0
-    for k in range(len(word)-1):
-        
-        if word[k] != word[k+1]:
-            new_word = word[k+1:]
+for i in range(len(s)):
+    if len(r) == 0 or i == 0:
+        r.append(s[i])
+    else:
+        if s[i] == r[-1]:
+            r.append(s[i])
+            print(r)
+        else:
+            new_r.append("".join(r))
+            r = []
             
-            if new_word.count(word[k]) > 0:
-                err += 1
-    
-    if err == 0:
-        cnt += 1
 
-print(cnt)
-                
+print(new_r)
