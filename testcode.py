@@ -5,13 +5,14 @@ cnt = 0
 for i in range(len(s)):
     if len(r) == 0 or i == 0:
         r.append(s[i])
-    else:
-        if s[i] == r[-1]:
+    if len(r) >= 1:
+        if s[i] == s[i-1]:
             r.append(s[i])
             print(r)
-        else:
+        if s[i] != r[-1] or i == len(s)-1:
             new_r.append("".join(r))
             r = []
+    
             
-
-print(new_r)
+new_r = list(map(int, new_r))
+print(max(new_r))
