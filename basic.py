@@ -1,3 +1,17 @@
+# 시간 측정 방법
+import time
+start_time = time.time()
+
+# ~~~~ 소스코드
+
+end_time = time.time()
+print("time :", end_time - start_time)
+
+
+# ------------------ -------------------------- --------------
+
+
+
 # 리스트 컴프리핸션
 # n x m 크기의 2차원 리스트 초기화
 n = 3
