@@ -1,38 +1,39 @@
 
-# dfs
-def dfs(v):
-    global cnt
-    visited[v] = True
+# 코드 완성은 햇는데 메모리 초과 뭥..
+# -> python3으로 제출해야 한다.
+
+
+n, m, r = map(int, input().split())
+
+# 이차원 리스트로 그래프 초기화
+graph = [[]*n for _ in range(n+1)]
+# 그래프 입력 받기
+for _ in range(m):
+    u, v = map(int, input().split())
+    graph[u].append(v)
+    graph[v].append(u)
     
-    nodes_cnt[v] = cnt
-    nodes[v].sort(reverse=True)
-    
-    for i in nodes[v]:
-        if not visited[i]:
-            cnt += 1
-            dfs(i)
-
-
-# 정점 수, 간선 수, 시작 정점 입력
-N, M, R = map(int, input().split())
-
-# 노드마다 연결된 곳 저장
-nodes = [[] for _ in range(N+1)]
-# 방문한지 안한지 저장할 배열
-visited = [False]*(N+1)
-# 정점 i의 방문 순서 저장 배열
-nodes_cnt = [0]*(N+1)
-
+visited = [False] * (n+1)
+graph_cnt = [0] * (n+1)
 cnt = 1
+# DFS 함수
+def dfs(graph, start, visited):
+    global cnt
+    # 방문시 True 값으로
+    visited[start] = True
+    graph_cnt[start] = cnt
+    graph[start].sort(reverse=True)
+    # 인접 노드 방문 검사
+    for i in graph[start]:
+        if not visited[i]: # 방문하지 않은 곳이면
+            cnt+=1
+            dfs(graph, i, visited)
+            
 
-# 간선 수만큼 반복문을 돌려 간선의 꼬리와 머리를 저장
-for _ in range(M):
-    tail, head = map(int, input().split())
-    nodes[tail].append(head)
-    nodes[head].append(tail)
-    
-# 시작 정점에서 시작
-dfs(R)
+            
+            
+dfs(graph, r, visited)
 
-for val in nodes_cnt[1:]:
-    print(val)
+for i in range(1,len(graph_cnt)):
+    print(graph_cnt[i])
+
