@@ -6,4 +6,4 @@ for i in range(x):
     if max(points) - min(points) >= 4:
         print('KIN')
     else:
-        print(sum(points)
+        print(sum(points))
