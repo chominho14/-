@@ -26,3 +26,13 @@ result.pop(index[0][0])
 result.pop(index[0][1]-1)
 for i in range(7):
     print(result[i])
+    
+    
+# 파이썬에는 순열과 조합 라이브러리를 제공한다
+# itertools
+
+# import itertools
+# array = [int(input()) for _ in range(9)]
+# for i in itertools.combinations(array, 7):
+
+# 위의 코드를 이용하여 9개 중 7개를 중복 없이 뽑을 수 있다.
